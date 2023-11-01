@@ -1,0 +1,22 @@
+{
+  "name": "hltb-steam",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node main.js",
+    "format": "standard --fix"
+  },
+  "private": true,
+  "keywords": [],
+  "author": "renatocfrancisco",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "howlongtobeat": "^1.8.0"
+  },
+  "devDependencies": {
+    "standard": "^17.1.0"
+  }
+}
