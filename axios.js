@@ -11,4 +11,12 @@ steamWebApi.getOwnedGames = function () {
   return this.get(`IPlayerService/GetOwnedGames/v1/${keySteamId}&include_appinfo=true`)
 }
 
-module.exports = steamWebApi
+const steamStoreApi = axios.create({
+  baseURL: 'http://store.steampowered.com/api/'
+})
+
+steamStoreApi.getGameDetails = function (appId) {
+  return this.get(`appdetails?appids=${appId}`)
+}
+
+module.exports = { steamWebApi, steamStoreApi }
