@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hltb-steam</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>hltb-steam</h1>
+
+    <div class="container">
+        <input type="password" name="apikey" id="apikey" value="1A6000333B0A40D197B9E595239442A1" >
+        <input type="password" name="steamid" id="steamid" value="76561198136172377">
+        <button id="search">Search</button>
+    </div>
+
+    <div class="container text-center" id="games">
+    </div>
+
+    <script>
+        require('./renderer')
+    </script>
+</body>
+</html>

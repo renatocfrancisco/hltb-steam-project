@@ -7,7 +7,8 @@ const steamWebApi = axios.create({
 
 const keySteamId = `?key=${process.env.STEAM_WEB_API_KEY}&steamid=${process.env.STEAM_USER_ID}`
 
-steamWebApi.getOwnedGames = function () {
+steamWebApi.getOwnedGames = function (apiKey = process.env.STEAM_WEB_API_KEY, userId = process.env.STEAM_USER_ID) {
+  let keySteamId = `?key=${apiKey}&steamid=${userId}`
   return this.get(`IPlayerService/GetOwnedGames/v1/${keySteamId}&include_appinfo=true`)
 }
 
