@@ -54,10 +54,12 @@ i {
 #search:hover{
   background: #4c6b22;
   color: #c7d5e0;
+  box-shadow: 0 0 10px #66c0f4;
 }
 
 #searchInputs{
   border-color: #171a21;
+  padding-top: 10px;
 }
 
 #searchInputs input {
@@ -121,4 +123,24 @@ i {
 
 .actions btn{
   width: 100px;
+}
+
+#order{
+  background-color: #171a21;
+  color: #c7d5e0;
+}
+
+#randomBtn{
+  background-color: white;
+  color: black;
+}
+
+#randomBtn:hover{
+  background-color: #beee17;
+  color: black;
+  box-shadow: 0 0 10px #66c0f4;
+}
+
+button:hover{
+  cursor: pointer;
 }

@@ -10,31 +10,27 @@
     <script src="https://kit.fontawesome.com/42b49d2033.js" crossorigin="anonymous"></script>
 </head>
 <body>
-    <h1>hltb-steam</h1>
-
     <div class="container" id="searchInputs">
-        <i class="fa-solid fa-key"></i> <input type="password" name="apikey" id="apikey" placeholder="steam api key">
-        <i class="fa-brands fa-steam"></i> <input type="password" name="steamid" id="steamid" placeholder="steam user id">
-        <button id="search">Search</button>
+        <i class="fa-solid fa-key fa-lg"></i> <input type="password" name="apikey" id="apikey" placeholder="steam api key">
+        <i class="fa-brands fa-steam fa-xl"></i> <input type="password" name="steamid" id="steamid" placeholder="steam user id">
+        <button id="search" class="btn">Search</button>
     </div>
 
     <div class="container " id="filters">
         <div class="row">
-            <div class="col-10">
-                <p>Search games</p>
+            <div class="col-5">
                 <input class="searchinput" type="text" name="search" id="searchgame" placeholder="search" disabled>
             </div>
+            <div class="col-5">
+                <button class="btn" id="randomBtn" disabled>RANDOM GAME</button>
+            </div>
             <div class="col-2">
-                <p>Sort</p>
                 <select class="searchinput" name="sort" id="sort" disabled>
-                    <option value="name">NAME</option>
-                    <option value="length">LENGTH</option>
-                    <!-- <option value="main_story">Main Story</option>
-                    <option value="main_extra">Main + Extra</option>
-                    <option value="completionist">Completionist</option>
-                    <option value="combined">Combined</option> -->
+                    <i class="fa-solid fa-up-long fa-sm"></i><option value="name">NAME</option>
+                    <i class="fa-solid fa-down-long fa-sm"></i><option value="length">LENGTH</option>
                 </select>
-                <button class="searchinput" name="order" id="order" disabled>Order</button>
+                <button class="orderBtn" name="order" id="order" disabled>Order</button>
+            </div>
         </div>
     </div>
 

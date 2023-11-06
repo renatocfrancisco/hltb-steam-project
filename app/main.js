@@ -9,8 +9,8 @@ let win
 
 function createWindow () {
     win = new BrowserWindow({
-        width: 800,
-        height: 600,
+        width: 1050,
+        height: 800,
         center: true,
         maximizable: true,
         autoHideMenuBar: true,

@@ -5,6 +5,7 @@ const fs = require('fs');
 let search = document.getElementById('search')
 let sort = document.getElementById('sort')
 let order = document.getElementById('order')
+let random = document.getElementById('randomBtn')
 let searchgame = document.getElementById('searchgame')
 const apiKey = document.getElementById('apikey').value
 const steamId = document.getElementById('steamid').value
@@ -169,12 +170,10 @@ ipcRenderer.on('gameLengthResult', (_event, game = null ) => {
         row.appendChild(actionsDiv)
 
         document.getElementById('games').appendChild(row)
-        disableElements([sort, order, search], false)
+        disableElements([sort, order, search, random], false)
 
-        // save game to json
         saveGameIntoJson(game)
         search.innerText = 'Refresh library'
-        //sort.click()
     }
 });
 
