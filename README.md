@@ -1,9 +1,5 @@
 # hltb-steam
 
-## Description
-
-Script to get the time to beat for all games in your Steam library.
-
 ## Requirements
 
 Node.js and a `.env` file for the Steam Web API Key and the Steam ID of your profile
@@ -15,19 +11,19 @@ STEAM_USER_ID='XXXXXXXXXXXXXX'
 
 ### To do
 
-- [ ] App must have a list of owned games
+- [X] App must have a list of owned games
 - [ ] App must have a separate list of free to play
 - [ ] App must have a separate list of ignored games
 - [ ] App must have a separate list of completed games
-- [ ] App must show a release date for each game
-- [ ] App must show "how long to beat" for each game
+- [X] App must show "how long to beat" for each game
 - [ ] App must have filters for each list - The filters must be: OLD, NEW, SHORT, LONG
-- [ ] App must have an option to randomly focus/select a game from the list
+- [ ] App must have an option to randomly focus/select a game from the list with a button named RANDOM
 
-- [ ] User must have an option to set a game as completed, currently playing or ignored
+- [ ] User must have an option to set a game as completed or ignored
 
 *Optional*:
 
+- [ ] App must show a release date for each game
 - [ ] App must show a status of reviews or a SteamDb Rating for each game
 - [ ] App must show the metacritic score for each game
 - [ ] App must have a new filter for "POSITIVELY REVIEWED" games

@@ -1,0 +1,56 @@
+/* STEAM colors */
+
+/* #171a21 #66c0f4 #1b2838 #2a475e #c7d5e0 #beee17 #4c6b22 */
+
+/* HLTB colors */
+
+/* #824985 #cc3b51 #3a6db5 */
+
+
+body {
+  background: #171a21;
+}
+
+p {
+    color: #c7d5e0;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    color: #c7d5e0;
+}
+
+.row {
+  color: #c7d5e0;
+}
+
+#game{
+  background: #1b2838;
+  color: #c7d5e0;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#icon {
+  display: block !important;
+  position: relative;
+  height: 25px;
+  width: 50px;
+  float: left;
+}
+
+#filters{
+  padding-top: 10px;
+}
+
+#gamesHeader{
+  padding-top: 10px;
+}
+
+#gamesHeader p {
+  font-size: 1.5em;
+  font-weight: bold;
+}

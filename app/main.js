@@ -1,5 +1,5 @@
 // bare electron app
-const { app, BrowserWindow, ipcMain } = require('electron')
+const { app, BrowserWindow, ipcMain, ipcRenderer } = require('electron')
 const path = require('path')
 const url = require('url')
 const { HowLongToBeatService } = require('howlongtobeat')
@@ -46,9 +46,23 @@ app.on('activate', () => {
 
 ipcMain.on('getGameLength', async (event, game) => {
     try {
-        const results = await hltbService.search(game.name);
-        event.reply('gameLengthResult', results);   
+        let results = await hltbService.search(game.name);
+        if (results[0]){
+            try {
+                if(game.id && game.img_icon_url){
+                    let gameIcon = `https://cdn.akamai.steamstatic.com/steamcommunity/public/images/apps/${game.id}/${game.img_icon_url}.jpg`
+                    results[0].image = gameIcon
+                } else if (game.id && game.image){
+                    results[0].image = game.image
+                } else {
+                    results[0].image = './img/steamitem.jpg'
+                }
+                results[0].id = game.id
+            } catch (error) {}
+            event.reply('gameLengthResult', results[0]);  
+        } 
     } catch (error) {
-        event.reply('gameLengthResult', null, error);
+        console.error('Error getting game length: ', error)
+        //event.reply('gameLengthResult', null, error);
     }
 });
