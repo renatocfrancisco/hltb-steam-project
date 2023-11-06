@@ -21,12 +21,47 @@ h1 {
     color: #c7d5e0;
 }
 
+i {
+  color: #c7d5e0;
+}
+
 .row {
   color: #c7d5e0;
 }
 
 #game{
   background: #1b2838;
+  color: #c7d5e0;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#game:hover{
+  background: #2a475e;
+}
+
+#search{
+  background: #beee17;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#search:hover{
+  background: #4c6b22;
+  color: #c7d5e0;
+}
+
+#searchInputs{
+  border-color: #171a21;
+}
+
+#searchInputs input {
+  background: #2a475e;
   color: #c7d5e0;
   border: none;
   border-radius: 3px;
@@ -53,4 +88,37 @@ h1 {
 #gamesHeader p {
   font-size: 1.5em;
   font-weight: bold;
+}
+
+#gameName{
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#checkGame{
+  /* fixed size of checkbox */
+  width: 20px;
+  height: 20px;
+}
+
+#completed{
+  background-color: #beee17;
+}
+
+#completed:hover{
+  background-color: #4c6b22;
+}
+
+#ignore{
+  background-color: #171a21;
+  color: #c7d5e0;
+}
+
+#ignore:hover{
+  background-color: #1b2838;
+  color: #c7d5e0;
+}
+
+.actions btn{
+  width: 100px;
 }

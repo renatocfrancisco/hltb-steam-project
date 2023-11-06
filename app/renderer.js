@@ -9,10 +9,18 @@ let searchgame = document.getElementById('searchgame')
 const apiKey = document.getElementById('apikey').value
 const steamId = document.getElementById('steamid').value
 
+function cleanGamesSection() {
+    let div = document.getElementById('games')
+    // remove all children except first one
+    while (div.childElementCount > 1) {
+        div.removeChild(div.lastChild)
+    }
+}
+
 function orderByName(array) {
     array.sort(function (a, b) {
-        let aText = a.children[1].innerText
-        let bText = b.children[1].innerText
+        let aText = a.children[2].innerText
+        let bText = b.children[2].innerText
         if (aText < bText) {
             return -1
         }
@@ -27,8 +35,8 @@ function orderByName(array) {
 
 function orderByLength(array){
     array.sort(function (a, b) {
-        let aLength = parseFloat(a.children[2].innerText)
-        let bLength = parseFloat(b.children[2].innerText)
+        let aLength = parseFloat(a.children[3].innerText)
+        let bLength = parseFloat(b.children[3].innerText)
 
         if (sort.value === 'asc') {
             if(aLength < bLength) {
@@ -121,25 +129,52 @@ ipcRenderer.on('gameLengthResult', (_event, game = null ) => {
         row.className = 'row'
         row.id = 'game'
 
+        let check = document.createElement('input')
+        check.type = 'checkbox'
+        check.className = 'col-1'
+        check.id = 'checkGame'
+        check.dataset.name = game.name
+        row.appendChild(check)
+
         let icon = document.createElement('img')
-        icon.src = game.image
-        icon.className = game.image ? 'col-4' : './img/steamitem.jpg'
+        icon.src = game.image ? game.image : './img/steamitem.jpg'
+        icon.className = 'col-1'
         icon.id = 'icon'
         row.appendChild(icon)
 
         let values = [game.name, game.gameplayMain, game.gameplayMainExtra, game.gameplayCompletionist]
         values.forEach(value => {
             let col = document.createElement('div')
-            col.className = 'col'
+            col.className = game.name === value ? 'col-4' : 'col-1'
+            if(game.name === value){
+                col.id = 'gameName'
+            }
             col.innerText = value
             row.appendChild(col)
         })
 
+        let actionsDiv = document.createElement('div')
+        actionsDiv.className = 'col-4'
+        actionsDiv.id = 'actions'
+        let extraBtns = [['Completed', 'completed'], ['Ignore it', 'ignore']]
+        extraBtns.forEach(btn => {
+            let extraBtn = document.createElement('button')
+            extraBtn.innerText = btn[0]
+            extraBtn.className = 'btn'
+            extraBtn.id = btn[1]
+            extraBtn.dataset.name = game.name
+            extraBtn.dataset.id = game.id
+            actionsDiv.appendChild(extraBtn)
+        })
+        row.appendChild(actionsDiv)
+
         document.getElementById('games').appendChild(row)
-        disableElements([sort, order], false)
+        disableElements([sort, order, search], false)
 
         // save game to json
         saveGameIntoJson(game)
+        search.innerText = 'Refresh library'
+        //sort.click()
     }
 });
 
@@ -151,10 +186,12 @@ sort.addEventListener('click', function() {
     switch (sort.value) {
         case 'name':
             childrenArray = orderByName(childrenArray)
+            cleanGamesSection()
             appendFilteredGames(childrenArray)
             break;
         case 'length':
             orderByLength(childrenArray)
+            cleanGamesSection()
             appendFilteredGames(childrenArray)
             break;
         default:
@@ -180,18 +217,6 @@ search.addEventListener('click', async function() {
 
     await steamWebApi.getOwnedGames().then(result => {
         let games = result.data.response.games
-
-        // games with alphabetical order
-        games = games.sort(function (a, b) {
-            if (a.name < b.name) {
-                return -1
-            }
-            if (a.name > b.name) {
-                return 1
-            }
-            return 0
-        })
-
         games.forEach(game => {
 
             let simplifiedGame = {
@@ -203,15 +228,4 @@ search.addEventListener('click', async function() {
             ipcRenderer.send('getGameLength', simplifiedGame)
         })
     }).catch(_err => {})
-
-    disableElements([search], false)
-    search.innerText = 'Refresh library'
-
-    function cleanGamesSection() {
-        let div = document.getElementById('games')
-        // remove all children except first one
-        while (div.childElementCount > 1) {
-            div.removeChild(div.lastChild)
-        }
-    }
 })
