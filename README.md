@@ -12,22 +12,19 @@ STEAM_USER_ID='XXXXXXXXXXXXXX'
 ### To do
 
 - [X] App must have a list of owned games
-- [ ] App must have a separate list of free to play
+- [X] App must show "how long to beat" for each game
 - [ ] App must have a separate list of ignored games
 - [ ] App must have a separate list of completed games
-- [X] App must show "how long to beat" for each game
-- [ ] App must have filters for each list - The filters must be: OLD, NEW, SHORT, LONG
+- [ ] App must have filters for each list - The filters must be: SHORT and LONG
 - [ ] App must have an option to randomly focus/select a game from the list with a button named RANDOM
-
 - [ ] User must have an option to set a game as completed or ignored
 
 *Optional*:
 
+- [x] App's style must have a steam color scheme, no light mode.
 - [ ] App must show a release date for each game
-- [ ] App must show a status of reviews or a SteamDb Rating for each game
-- [ ] App must show the metacritic score for each game
-- [ ] App must have a new filter for "POSITIVELY REVIEWED" games
-- [ ] App's style must have a steam color scheme, no light mode.
+- [ ] App must have filters for each list - The filters must be: OLD and NEW
+- [ ] App must have a separate list of free to play
 
 ![#171a21](https://via.placeholder.com/15/171a21/000000?text=+) `#171a21`
 ![#66c0f4](https://via.placeholder.com/15/66c0f4/000000?text=+) `#66c0f4`

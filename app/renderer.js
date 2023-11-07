@@ -20,8 +20,8 @@ function cleanGamesSection() {
 
 function orderByName(array) {
     array.sort(function (a, b) {
-        let aText = a.children[2].innerText
-        let bText = b.children[2].innerText
+        let aText = a.children[1].innerText
+        let bText = b.children[1].innerText
         if (aText < bText) {
             return -1
         }
@@ -36,8 +36,8 @@ function orderByName(array) {
 
 function orderByLength(array){
     array.sort(function (a, b) {
-        let aLength = parseFloat(a.children[3].innerText)
-        let bLength = parseFloat(b.children[3].innerText)
+        let aLength = parseFloat(a.children[2].innerText)
+        let bLength = parseFloat(b.children[2].innerText)
 
         if (sort.value === 'asc') {
             if(aLength < bLength) {
@@ -74,16 +74,26 @@ function disableElements(arrayElements, value = true){
 }
 
 function createGamesJsonFile() {
-    if (!fs.existsSync('games.json')) {
-        fs.writeFileSync('games.json', JSON.stringify([]));
+    let folder = './app/data/'
+    let files = ['games.json', 'ignored.json', 'completed.json']
+
+    if (!fs.existsSync(folder)) {
+        fs.mkdirSync(folder);
     }
+
+    files.forEach(file => {
+        if (!fs.existsSync(folder + file)) {
+            fs.writeFileSync(folder + file, JSON.stringify([]));
+        }
+    })
 }
 
 function saveGameIntoJson(game){
     createGamesJsonFile();
 
     // get json file
-    let games = fs.readFileSync('games.json');
+    let gamesFile = './app/data/games.json'
+    let games = fs.readFileSync(gamesFile);
     games = JSON.parse(games);
 
     // check if game already exists
@@ -97,7 +107,7 @@ function saveGameIntoJson(game){
     // if not, add it
     if(!exists){
         games.push(game);
-        fs.writeFileSync('games.json', JSON.stringify(games));
+        fs.writeFileSync(gamesFile, JSON.stringify(games));
     } else {
         // overwrite game with new data
         games.forEach(g => {
@@ -106,7 +116,7 @@ function saveGameIntoJson(game){
             }
         });
 
-        fs.writeFileSync('games.json', JSON.stringify(games));
+        fs.writeFileSync(gamesFile, JSON.stringify(games));
     }
 }
 
@@ -115,7 +125,8 @@ window.onload = function() {
     createGamesJsonFile();
 
     // get json file
-    let games = fs.readFileSync('games.json');
+    let gamesFile = './app/data/games.json'
+    let games = fs.readFileSync(gamesFile);
     games = JSON.parse(games);
 
     // add games to html
@@ -129,13 +140,6 @@ ipcRenderer.on('gameLengthResult', (_event, game = null ) => {
         let row = document.createElement('div')
         row.className = 'row'
         row.id = 'game'
-
-        let check = document.createElement('input')
-        check.type = 'checkbox'
-        check.className = 'col-1'
-        check.id = 'checkGame'
-        check.dataset.name = game.name
-        row.appendChild(check)
 
         let icon = document.createElement('img')
         icon.src = game.image ? game.image : './img/steamitem.jpg'
@@ -163,6 +167,16 @@ ipcRenderer.on('gameLengthResult', (_event, game = null ) => {
             extraBtn.innerText = btn[0]
             extraBtn.className = 'btn'
             extraBtn.id = btn[1]
+
+            let icon = document.createElement('i')
+            // add font awesome icon
+            if (btn[1] === 'completed') {
+                icon.className = 'fa-solid fa-check'
+            } else {
+                icon.className = 'fa-solid fa-ban'
+            }
+            extraBtn.appendChild(icon)
+
             extraBtn.dataset.name = game.name
             extraBtn.dataset.id = game.id
             actionsDiv.appendChild(extraBtn)

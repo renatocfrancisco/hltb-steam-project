@@ -25,6 +25,10 @@ i {
   color: #c7d5e0;
 }
 
+button:hover{
+  cursor: pointer;
+}
+
 .row {
   color: #c7d5e0;
 }
@@ -74,8 +78,8 @@ i {
 #icon {
   display: block !important;
   position: relative;
-  height: 25px;
-  width: 50px;
+  height: 35px;
+  width: 60px;
   float: left;
 }
 
@@ -85,7 +89,7 @@ i {
 
 #gamesHeader{
   padding-top: 10px;
-}
+;}
 
 #gamesHeader p {
   font-size: 1.5em;
@@ -97,18 +101,15 @@ i {
   font-weight: bold;
 }
 
-#checkGame{
-  /* fixed size of checkbox */
-  width: 20px;
-  height: 20px;
-}
-
 #completed{
-  background-color: #beee17;
+  background-color: #4c6b22;
+  color: white;
 }
 
 #completed:hover{
-  background-color: #4c6b22;
+  background-color: #beee17;
+  color: black;
+  box-shadow: 0 0 10px #66c0f4;
 }
 
 #ignore{
@@ -118,11 +119,14 @@ i {
 
 #ignore:hover{
   background-color: #1b2838;
-  color: #c7d5e0;
 }
 
-.actions btn{
+#actions btn{
   width: 100px;
+}
+
+#actions i {
+  color: white;
 }
 
 #order{
@@ -130,17 +134,18 @@ i {
   color: #c7d5e0;
 }
 
-#randomBtn{
+.libraryOptions button{
   background-color: white;
   color: black;
 }
 
-#randomBtn:hover{
+.libraryOptions button:hover{
   background-color: #beee17;
   color: black;
   box-shadow: 0 0 10px #66c0f4;
 }
 
-button:hover{
-  cursor: pointer;
+.libraryOptions i{
+  color: black;
+  padding-right: 10px;
 }
