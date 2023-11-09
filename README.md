@@ -26,6 +26,10 @@ STEAM_USER_ID='XXXXXXXXXXXXXX'
 - [ ] App must have filters for each list - The filters must be: OLD and NEW
 - [ ] App must have a separate list of free to play
 
+#### Colors
+
+Steam
+
 ![#171a21](https://via.placeholder.com/15/171a21/000000?text=+) `#171a21`
 ![#66c0f4](https://via.placeholder.com/15/66c0f4/000000?text=+) `#66c0f4`
 ![#1b2838](https://via.placeholder.com/15/1b2838/000000?text=+) `#1b2838`
@@ -33,3 +37,10 @@ STEAM_USER_ID='XXXXXXXXXXXXXX'
 ![#c7d5e0](https://via.placeholder.com/15/c7d5e0/000000?text=+) `#c7d5e0`
 ![#beee17](https://via.placeholder.com/15/beee17/000000?text=+) `#beee17`
 ![#4c6b22](https://via.placeholder.com/15/4c6b22/000000?text=+) `#4c6b22`
+
+How long to beat
+
+![824985](https://via.placeholder.com/15/824985/000000?text=+) `824985`
+![#3a6db5](https://via.placeholder.com/15/3a6db5/000000?text=+) `#3a6db5`
+![#cc3b51](https://via.placeholder.com/15/cc3b51/000000?text=+) `#cc3b51`
+
