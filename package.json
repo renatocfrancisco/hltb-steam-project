@@ -2,9 +2,9 @@
   "name": "hltb-steam",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app/main.js",
   "scripts": {
-    "start": "node main.js",
+    "start": "electron .",
     "format": "standard --fix"
   },
   "private": true,
@@ -17,6 +17,7 @@
     "howlongtobeat": "^1.8.0"
   },
   "devDependencies": {
+    "electron": "^27.0.3",
     "standard": "^17.1.0"
   }
 }

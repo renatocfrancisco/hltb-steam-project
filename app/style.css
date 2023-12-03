@@ -1,0 +1,151 @@
+/* STEAM colors */
+
+/* #171a21 #66c0f4 #1b2838 #2a475e #c7d5e0 #beee17 #4c6b22 */
+
+/* HLTB colors */
+
+/* #824985 #cc3b51 #3a6db5 */
+
+
+body {
+  background: #171a21;
+}
+
+p {
+    color: #c7d5e0;
+}
+
+h1 {
+    font-size: 2em;
+    text-align: center;
+    color: #c7d5e0;
+}
+
+i {
+  color: #c7d5e0;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.row {
+  color: #c7d5e0;
+}
+
+#game{
+  background: #1b2838;
+  color: #c7d5e0;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#game:hover{
+  background: #2a475e;
+}
+
+#search{
+  background: #beee17;
+  color: black;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#search:hover{
+  background: #4c6b22;
+  color: #c7d5e0;
+  box-shadow: 0 0 10px #66c0f4;
+}
+
+#searchInputs{
+  border-color: #171a21;
+  padding-top: 10px;
+}
+
+#searchInputs input {
+  background: #2a475e;
+  color: #c7d5e0;
+  border: none;
+  border-radius: 3px;
+  padding: 10px;
+  margin: 10px;
+}
+
+#icon {
+  display: block !important;
+  position: relative;
+  height: 35px;
+  width: 60px;
+  float: left;
+}
+
+#filters{
+  padding-top: 10px;
+}
+
+#gamesHeader{
+  padding-top: 10px;
+;}
+
+#gamesHeader p {
+  font-size: 1.5em;
+  font-weight: bold;
+}
+
+#gameName{
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
+#completed{
+  background-color: #4c6b22;
+  color: white;
+}
+
+#completed:hover{
+  background-color: #beee17;
+  color: black;
+  box-shadow: 0 0 10px #66c0f4;
+}
+
+#ignore{
+  background-color: #171a21;
+  color: #c7d5e0;
+}
+
+#ignore:hover{
+  background-color: #1b2838;
+}
+
+#actions btn{
+  width: 100px;
+}
+
+#actions i {
+  color: white;
+}
+
+#order{
+  background-color: #171a21;
+  color: #c7d5e0;
+}
+
+.libraryOptions button{
+  background-color: white;
+  color: black;
+}
+
+.libraryOptions button:hover{
+  background-color: #beee17;
+  color: black;
+  box-shadow: 0 0 10px #66c0f4;
+}
+
+.libraryOptions i{
+  color: black;
+  padding-right: 10px;
+}
