@@ -1,15 +1,22 @@
 # hltb-steam
 
+![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=flat&logo=steam&logoColor=white)
+![Electron.js](https://img.shields.io/badge/electron-191970?style=flat&logo=Electron&logoColor=white)
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
 ## Requirements
 
-Node.js and a `.env` file for the Steam Web API Key and the Steam ID of your profile
+### For development:
+
+[Node.js](https://nodejs.org/en) and a `.env` file for the [Steam Web API Key](https://steamcommunity.com/dev) and the [Steam ID](https://steamdb.info/calculator/) of your profile
 
 ```env
 STEAM_WEB_API_KEY='XXXXXXXXXXXXXXX'
 STEAM_USER_ID='XXXXXXXXXXXXXX'
 ```
 
-### To do
+## To do
 
 - [X] App must have a list of owned games
 - [X] App must show "how long to beat" for each game
@@ -26,9 +33,9 @@ STEAM_USER_ID='XXXXXXXXXXXXXX'
 - [ ] App must have filters for each list - The filters must be: OLD and NEW
 - [ ] App must have a separate list of free to play
 
-#### Colors
+## Colors
 
-Steam
+**Steam**
 
 ![#171a21](https://via.placeholder.com/15/171a21/000000?text=+) `#171a21`
 ![#66c0f4](https://via.placeholder.com/15/66c0f4/000000?text=+) `#66c0f4`
@@ -38,9 +45,8 @@ Steam
 ![#beee17](https://via.placeholder.com/15/beee17/000000?text=+) `#beee17`
 ![#4c6b22](https://via.placeholder.com/15/4c6b22/000000?text=+) `#4c6b22`
 
-How long to beat
+**How long to beat**
 
 ![824985](https://via.placeholder.com/15/824985/000000?text=+) `824985`
 ![#3a6db5](https://via.placeholder.com/15/3a6db5/000000?text=+) `#3a6db5`
 ![#cc3b51](https://via.placeholder.com/15/cc3b51/000000?text=+) `#cc3b51`
-
