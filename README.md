@@ -1,4 +1,4 @@
-# hltb-steam
+# hltb-steam-project
 
 ![Steam](https://img.shields.io/badge/steam-%23000000.svg?style=flat&logo=steam&logoColor=white)
 ![Electron.js](https://img.shields.io/badge/electron-191970?style=flat&logo=Electron&logoColor=white)
