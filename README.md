@@ -5,6 +5,8 @@
 ![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=flat&logo=node.js&logoColor=white)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
+An undefined unfinished project that will help users to deal with their Steam backlog and decide which games to play.
+
 ## Requirements
 
 ### For development:
